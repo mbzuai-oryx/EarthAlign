@@ -1,0 +1,215 @@
+/*
+ * EarthAlign project page.
+ * Base typography/layout follows the OpenEarthAgent gh-pages project page
+ * so EarthAlign stays visually consistent with the MBZUAI ORYX project pages.
+ */
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser,
+.publication-title,
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.video-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* EarthAlign additions */
+.publication-header .hero-body {
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.publication-title {
+  line-height: 1.15;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 980px;
+}
+
+.affiliations {
+  color: #4a4a4a;
+}
+
+.publication-links .button {
+  margin: 0.25rem 0.18rem;
+  min-width: 108px;
+}
+
+.section .container.is-max-desktop {
+  max-width: 960px !important;
+}
+
+.overview-text,
+.section .content.has-text-justified {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+.section-figure {
+  display: block;
+  width: min(100%, 800px);
+  height: auto;
+  margin: 1.25rem auto 0;
+}
+
+.results-figure {
+  width: min(100%, 900px);
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
+.slider-window {
+  width: min(100%, 800px);
+  overflow: hidden;
+}
+
+.image-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.slider-img,
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.slider-button {
+  background: none;
+  border: none;
+  color: #363636;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.slider-button:hover,
+.slider-button:focus-visible {
+  color: #000;
+}
+
+.slider-dots {
+  margin-top: 0.75rem;
+}
+
+.slider-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: #b5b5b5;
+}
+
+.slider-dot.is-active {
+  background: #363636;
+}
+
+.institution-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
+.institution-logos img {
+  display: block;
+  max-width: 180px;
+  max-height: 78px;
+  width: auto;
+  height: auto;
+}
+
+.logos-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer {
+  padding: 2rem 1.5rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-header .hero-body {
+    padding-top: 2.25rem;
+  }
+
+  .publication-title.title.is-2 {
+    font-size: 1.9rem;
+  }
+
+  .slider-wrapper {
+    gap: 4px;
+  }
+
+  .slider-button {
+    font-size: 1.6rem;
+  }
+
+  .institution-logos {
+    gap: 1.5rem;
+  }
+
+  .institution-logos img {
+    max-width: 140px;
+    max-height: 60px;
+  }
+}

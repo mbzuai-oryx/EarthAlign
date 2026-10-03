@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="EarthAlign: Learning Language-Aligned Representations of Earth System Data.">
+  <meta name="keywords" content="Earth System AI, Meteorology, Multimodal Learning, Vision-Language Models, ERA5, Climate AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EarthAlign</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+
+<!-- ================================================================
+     Header / hero
+================================================================= -->
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+
+      <h1 class="title is-2 publication-title">
+        EarthAlign: Learning Language-Aligned Representations of Earth System Data
+      </h1>
+
+      <div class="is-size-6 publication-authors">
+        <span class="author-block">Fadillah Adamsyah Maani<sup>1</sup>,</span>
+        <span class="author-block">Numan Saeed<sup>1</sup>,</span>
+        <span class="author-block">Jiaqi Ma<sup>1</sup>,</span>
+        <span class="author-block">Dat Tien Nguyen<sup>1</sup>,</span>
+        <span class="author-block">Youssef Wehbe<sup>2</sup>,</span>
+        <span class="author-block">Duncan Watson-Parris<sup>3</sup>,</span>
+        <span class="author-block">Salman Khan<sup>1,2</sup></span>
+      </div>
+
+      <div class="is-size-7 mt-2 affiliations">
+        <sup>1</sup> Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) &middot;
+        <sup>2</sup> ADIA Lab &middot;
+        <sup>3</sup> University of California, San Diego (UC San Diego)
+      </div>
+
+      <br>
+
+      <div class="publication-links">
+        <a href="PAPER_URL" class="button is-dark is-rounded" aria-label="Paper">
+          <span class="icon"><i class="fas fa-file-pdf"></i></span>
+          <span>Paper</span>
+        </a>
+
+        <a href="https://github.com/mbzuai-oryx/EarthAlign" class="button is-dark is-rounded" aria-label="Code">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>Code</span>
+        </a>
+
+        <a href="https://huggingface.co/datasets/MBZUAI/EarthAlign/tree/main/EarthAlign" class="button is-warning is-rounded" aria-label="Dataset">
+          <span class="icon"><i class="fas fa-database"></i></span>
+          <span>Dataset</span>
+        </a>
+
+        <a href="https://huggingface.co/datasets/MBZUAI/EarthAlign/tree/main/MeteoLIP" class="button is-warning is-rounded" aria-label="Weights">
+          <span class="icon"><i class="fas fa-cube"></i></span>
+          <span>Weights</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Overview ============================== -->
+<section class="section has-background-light">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Overview</h2>
+
+    <div class="content overview-text has-text-justified">
+      <p>
+        <b>EarthAlign</b> is a large-scale Earth system-language alignment dataset and benchmark for learning and evaluating multimodal representations of Earth system data. It contains 553,738 samples spanning 2000-2024, with broad geographic coverage and diverse natural phenomena and normal weather conditions. Each sample includes temporal and geospatial information, multivariate ERA5 data, and four metadata-grounded caption styles that describe the same Earth system condition from different perspectives. Building on EarthAlign, <b>MeteoLIP</b> is a dual-encoder framework for aligning meteorological data with natural language. Its meteorology tokenizer, MetTok, aggregates variable-specific representations into compact meteorology tokens while incorporating temporal and geospatial information. MeteoLIP supports cross-modal retrieval, weather-condition classification, and physical variable estimation, providing a benchmark for evaluating language-aligned Earth system representations.
+      </p>
+    </div>
+
+    <div class="slider-wrapper overview-slider">
+      <button class="slider-button" id="overviewPrevBtn" aria-label="Previous overview figure">&#10094;</button>
+      <div class="slider-window">
+        <div id="overviewImageSlider" class="image-slider">
+          <div class="slide"><img src="assets/figures/overview_1.svg" alt="EarthAlign overview figure 1"></div>
+          <div class="slide"><img src="assets/figures/overview_2.png" alt="EarthAlign overview figure 2"></div>
+        </div>
+      </div>
+      <button class="slider-button" id="overviewNextBtn" aria-label="Next overview figure">&#10095;</button>
+    </div>
+    <div class="slider-dots" aria-hidden="true">
+      <span class="slider-dot is-active"></span>
+      <span class="slider-dot"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== Highlights ============================== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">🏆 Highlights</h2>
+
+    <div class="content highlights-content">
+      <ol>
+        <li>
+          <strong>EarthAlign Dataset.</strong>
+          553,738 samples spanning 2000-2024, with broad geographic coverage
+          and diverse natural phenomena and normal weather conditions.
+          Four metadata-grounded caption styles provide complementary
+          descriptions of each Earth system condition.
+        </li>
+
+        <li>
+          <strong>MeteoLIP.</strong>
+          A CLIP/SigLIP-based dual-encoder framework for meteorology-language
+          representation learning, with MetTok for meteorological tokenization
+          and temporal/geospatial conditioning.
+        </li>
+
+        <li>
+          <strong>Three Evaluation Tasks.</strong>
+          Cross-modal retrieval, weather-condition classification, and
+          physical variable estimation.
+        </li>
+
+        <li>
+          <strong>Open Release.</strong>
+          Dataset, training and evaluation code, and pretrained model weights
+          are publicly available.
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EarthAlign Data Construction ======================= -->
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">EarthAlign Data Construction</h2>
+    <img src="assets/figures/data_construction.svg" width="800" class="section-figure" alt="EarthAlign data construction pipeline">
+    <div class="content has-text-justified mt-4">
+      <p>
+        EarthAlign combines expert-curated natural-event records with climatology-based normal-weather samples. The resulting records contain standardized spatial and temporal information, labels, four grounded caption styles for alignment with Earth system data. Each record is paired with 63-variable ERA5 snapshots.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MeteoLIP Architecture and Training ================= -->
+<section class="section has-background-light">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">MeteoLIP Architecture and Training</h2>
+    <img src="assets/figures/meteolip_architecture.svg" width="800" class="section-figure" alt="MeteoLIP architecture and training">
+    <div class="content has-text-justified mt-4">
+      <p>
+        MeteoLIP consists of transformer-based meteorological and text encoders. MetTok converts multivariate meteorological input into a compact token sequence. During training, we randomly sample a caption style for each meteorological input and optimize a contrastive objective to align meteorological and textual representations in a shared embedding space.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= Quantitative Results ========================= -->
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Quantitative Results</h2>
+    <img src="assets/figures/quantitative_results.png" width="900" class="section-figure results-figure" alt="EarthAlign quantitative results table">
+    <div class="content has-text-justified mt-4">
+      <p>
+        Comparison of CLIP and SigLIP baselines with their MeteoLIP counterparts. (a) Cross-modal retrieval. (b) Classification under text-prototype inference and linear probing. (c) Physical variable estimation of cyclone maximum sustained wind speed and minimum central pressure under the same two protocols. Bold and underline indicate the best and second-best results.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================== Qualitative Results ========================== -->
+<section class="section has-background-light">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-3">Qualitative Results</h2>
+    <img src="assets/figures/qualitative_results.png" width="900" class="section-figure results-figure" alt="EarthAlign qualitative results">
+    <div class="content has-text-justified mt-4">
+      <p>
+        Qualitative results using the MeteoLIP meteorology and text encoders. (a) Meteorology-to-text retrieval retrieves captions describing the same or closely related event across different caption styles. (b) The cold-wave example assigns the highest probability to cold wave, followed by winter weather and frost. (c) The similarity profiles over candidate physical values show peaks around the predicted minimum central pressure and maximum sustained wind speed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ Citation ================================ -->
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+<pre><code></code></pre>
+  </div>
+</section>
+
+<!-- ============================ Acknowledgement ============================ -->
+<section class="section has-background-light">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">Acknowledgement</h2>
+    <p>
+      This material is based on work supported by ADIA Lab, Abu Dhabi under a collaborative research project titled Climate Co-Pilot: A Multimodal AI Agent for Climate Resilience in the MENA Region.
+    </p>
+    <p>
+      Our codebase is built upon the <a href="https://github.com/mlfoundations/open_clip">OpenCLIP</a> repository, and we thank sincerely its developers and contributors for making their work publicly available.
+    </p>
+  </div>
+</section>
+
+<!-- ================================= Logos ================================= -->
+<section class="section logos-section">
+  <div class="container is-max-desktop has-text-centered">
+    <div class="institution-logos">
+      <a href="https://www.ival-mbzuai.net" aria-label="IVAL">
+        <img src="assets/logos/IVAL_logo.png" alt="IVAL logo">
+      </a>
+      <a href="https://mbzuai.ac.ae" aria-label="MBZUAI">
+        <img src="assets/logos/MBZUAI_logo.png" alt="MBZUAI logo">
+      </a>
+      <a href="https://www.ucsd.edu/" aria-label="UC San Diego">
+        <img src="assets/logos/UCSD_logo.svg" alt="UC San Diego logo">
+      </a>
+      <a href="https://www.adialab.ae/" aria-label="ADIA Lab">
+        <img src="assets/logos/ADIALab_logo.png" alt="ADIA Lab logo">
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>EarthAlign &middot; Mohamed bin Zayed University of Artificial Intelligence</p>
+  </div>
+</footer>
+
+<script>
+  const overviewSlider = document.getElementById("overviewImageSlider");
+  const overviewSlides = overviewSlider.querySelectorAll(".slide");
+  const overviewDots = document.querySelectorAll(".slider-dot");
+  let overviewIndex = 0;
+  let overviewAutoSlide;
+
+  function updateOverviewSlide() {
+    overviewSlider.style.transform = `translateX(-${overviewIndex * 100}%)`;
+    overviewDots.forEach((dot, i) => dot.classList.toggle("is-active", i === overviewIndex));
+  }
+
+  function nextOverviewSlide() {
+    overviewIndex = (overviewIndex + 1) % overviewSlides.length;
+    updateOverviewSlide();
+  }
+
+  function prevOverviewSlide() {
+    overviewIndex = (overviewIndex - 1 + overviewSlides.length) % overviewSlides.length;
+    updateOverviewSlide();
+  }
+
+  function startOverviewAutoSlide() {
+    overviewAutoSlide = setInterval(nextOverviewSlide, 4000);
+  }
+
+  function stopOverviewAutoSlide() {
+    clearInterval(overviewAutoSlide);
+  }
+
+  document.getElementById("overviewNextBtn").addEventListener("click", () => {
+    stopOverviewAutoSlide();
+    nextOverviewSlide();
+    startOverviewAutoSlide();
+  });
+
+  document.getElementById("overviewPrevBtn").addEventListener("click", () => {
+    stopOverviewAutoSlide();
+    prevOverviewSlide();
+    startOverviewAutoSlide();
+  });
+
+  window.addEventListener("load", startOverviewAutoSlide);
+</script>
+
+</body>
+</html>
