@@ -12,14 +12,14 @@
 </div>
 
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv&logoColor=white)](LINK)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2610.14624)
 [![EarthAlign_Dataset](https://img.shields.io/badge/🤗_EarthAlign-Dataset-F9D371)](#earthalign-data-preparation)
 [![MeteoLIP_Weights](https://img.shields.io/badge/🤗_MeteoLIP-Weights-F9D371)](#meteolip-weights)
 
 ---
 
 ## 📢 Latest Updates
-- **Oct-26**: 📜 EarthAlign paper is released [LINK].
+- **Oct-26**: 📜 EarthAlign paper is released ([access](https://arxiv.org/abs/2610.14624)).
 - **Oct-26**: 🔥 MeteoLIP and weights code are released ([access](#meteolip-weights)).
 - **Oct-26**: 📂 EarthAlign dataset is released ([access](#earthalign-dataset-records-and-metadata)).
 
@@ -274,7 +274,17 @@ Our codebase is built upon the [OpenCLIP](https://github.com/mlfoundations/open_
 
 ## 📜 Citation
 
-CITATION
+```bibtex
+@misc{maani2026earthalignlearninglanguagealignedrepresentations,
+      title={EarthAlign: Learning Language-Aligned Representations of Earth System Data}, 
+      author={Fadillah Adamsyah Maani and Numan Saeed and Jiaqi Ma and Dat Tien Nguyen and Youssef Wehbe and Duncan Watson-Parris and Salman Khan},
+      year={2026},
+      eprint={2610.14624},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2610.14624}, 
+}
+```
 
 ---
 <div style="display: flex; align-items: center; gap: 10px;">
