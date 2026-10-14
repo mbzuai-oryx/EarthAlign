@@ -11,7 +11,7 @@
 
 </div>
 
-
+[![Webpage](https://img.shields.io/badge/🌐_Project-Webpage-4285F4?logo=googlechrome&logoColor=white)](https://mbzuai-oryx.github.io/EarthAlign/)
 [![Paper](https://img.shields.io/badge/arXiv-Paper-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2610.14624)
 [![EarthAlign_Dataset](https://img.shields.io/badge/🤗_EarthAlign-Dataset-F9D371)](#earthalign-data-preparation)
 [![MeteoLIP_Weights](https://img.shields.io/badge/🤗_MeteoLIP-Weights-F9D371)](#meteolip-weights)
