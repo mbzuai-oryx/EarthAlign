@@ -57,7 +57,7 @@
      --info-json <EarthAlign>/data_era5_processed/info.json \
      --workers 8
    ```
-   Each training sample is saved as `<folder_name>.npz` (~200 GB in total), where `folder_name` is a field stored inside each `.npz` file and serves as the unique sample identifier throughout the MeteoLIP pipeline. A few names contain `/` (e.g., `Flooding and/or mudflows`), which is replaced by `_` in the file name. With `--info-json`, the script verifies at the end that all training and test samples are present. The script can be safely interrupted and re-run.
+   Each training sample is saved as `<folder_name>.npz` (~200 GB in total), where `folder_name` is a field stored inside each `.npz` file and serves as the unique sample identifier throughout the MeteoLIP pipeline. A few names contain `/`, which is replaced by `_` in the file name. With `--info-json`, the script verifies at the end that all training and test samples are present. The script can be safely interrupted and re-run.
 
 **Note**: The EarthAlign dataset is further explained in [EarthAlign Dataset Records and Metadata](#earthalign-dataset-records-and-metadata).
 
