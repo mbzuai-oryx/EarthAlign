@@ -49,7 +49,15 @@
 2. **Download the test/evaluation data.**  
    Download the test/evaluation data in `.npz` and `.json` formats from [here](https://huggingface.co/datasets/MBZUAI/EarthAlign/tree/main/EarthAlign/data_era5_processed), then extract the tar files.
 3. **(Optional) Prepare training samples for probing.**  
-   This step is only required for the classification and cyclone physical quantity estimation probing experiments. Extract the `.npz` files corresponding to the training samples from the WebDataset shards and place them in the `npz` directory of the downloaded test data, effectively combining the training and test `.npz` files in the same directory. Each `.npz` file contains a `folder_name` field, which serves as the unique sample identifier throughout the MeteoLIP pipeline.
+   This step is only required for the classification and cyclone physical quantity estimation probing experiments. The probing scripts expect the training and test `.npz` files in the same directory, so the training samples need to be extracted from the WebDataset shards into the `npz` directory of the downloaded test data:
+   ```bash
+   python preprocessing_code/extract_train_npz_from_wds.py \
+     --wds-dir   <EarthAlign>/webdatasets_train \
+     --npz-dir   <EarthAlign>/data_era5_processed/npz \
+     --info-json <EarthAlign>/data_era5_processed/info.json \
+     --workers 8
+   ```
+   Each training sample is saved as `<folder_name>.npz` (~200 GB in total), where `folder_name` is a field stored inside each `.npz` file and serves as the unique sample identifier throughout the MeteoLIP pipeline. A few names contain `/` (e.g., `Flooding and/or mudflows`), which is replaced by `_` in the file name. With `--info-json`, the script verifies at the end that all training and test samples are present. The script can be safely interrupted and re-run.
 
 **Note**: The EarthAlign dataset is further explained in [EarthAlign Dataset Records and Metadata](#earthalign-dataset-records-and-metadata).
 
